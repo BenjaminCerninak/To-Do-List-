@@ -1,7 +1,12 @@
 import React from "react";
+import TaskForm from "./components/TaskForm/TaskForm";
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <TaskForm />
+    </div>
+  );
 }
 
 export default App;

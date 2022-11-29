@@ -6,13 +6,21 @@ const TaskForm = (props) => {
   return (
     <Card>
       <form>
-        <label>Task</label>
-        <input type="text" />
-        <label>Deadline</label>
-        <input type="date" />
-        <label>Time</label>
-        <input type="time" step="300" />
-        <Button>Add task</Button>
+        <div className={classes.task}>
+          <label>Task</label>
+          <input type="text" />
+        </div>
+        <div className={classes.task}>
+          <label>Deadline</label>
+          <input type="date" />
+        </div>
+        <div className={classes.task}>
+          <label>Time</label>
+          <input type="time" step="300" />
+        </div>
+        <div>
+          <Button className={classes.actions}>Add task</Button>
+        </div>
       </form>
     </Card>
   );

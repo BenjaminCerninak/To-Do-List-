@@ -1,0 +1,31 @@
+.task {
+  color: rgb(80, 80, 80);
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid black;
+  border-radius: 9px;
+  min-width: 300px;
+  padding: 4px;
+  margin: 10px;
+}
+.task input {
+  border-radius: 5px;
+  color: rgb(80, 80, 80);
+}
+.task input:focus {
+  outline-color: rgb(204, 204, 204);
+  border: 2px solid rgb(201, 201, 201);
+}
+
+.actions {
+  width: 300px;
+}
+
+.actions:focus,
+.actions:hover {
+  color: rgb(20, 20, 20);
+  background-color: rgb(163, 163, 163);
+}

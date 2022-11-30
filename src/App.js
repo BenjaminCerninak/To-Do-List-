@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import TaskForm from "./components/TaskForm/TaskForm";
 import NewTaskList from "./components/NewTasks/NewTaskList";
 import ErrorModal from "./components/UI/ErrorModal";
+
 function App() {
   const [newTask, setNewTask] = useState([]);
+  const [error, setError] = useState(false);
+  const [errorMessages, setErrorMessages] = useState({});
   const addTasksHandler = (tData, tDeadline, tTime) => {
     setNewTask((prevTask) => {
       return [
@@ -17,11 +20,27 @@ function App() {
       ];
     });
   };
-  console.log(newTask);
+
+  const errorHandler = () => {
+    setError(false);
+  };
+
+  const setErrorHandler = (eTitle, eMessage) => {
+    setErrorMessages({
+      title: eTitle,
+      message: eMessage,
+    });
+    setError(true);
+  };
   return (
     <div>
-      <ErrorModal />
-      <TaskForm onAddTasks={addTasksHandler} />
+      {error && (
+        <ErrorModal
+          errorMessages={errorMessages}
+          onChangeError={errorHandler}
+        />
+      )}
+      <TaskForm onSetError={setErrorHandler} onAddTasks={addTasksHandler} />
       <NewTaskList newTasks={newTask} />
     </div>
   );

@@ -9,6 +9,12 @@ const TaskForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (addTask.trim().length === 0) {
+      props.onSetError("Empty Task", "You need to write a task!");
+
+      return;
+    }
+
     props.onAddTasks(addTask, addDeadline, addTime);
     setAddTask("");
     setAddDeadline("");

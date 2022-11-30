@@ -35,6 +35,8 @@
 .content p {
   margin-top: 30px;
   color: rgb(227, 44, 44);
+  padding: 0 25px;
+  line-height: 25px;
 }
 
 h2 {

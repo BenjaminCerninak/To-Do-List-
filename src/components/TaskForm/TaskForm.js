@@ -14,7 +14,19 @@ const TaskForm = (props) => {
 
       return;
     }
+    if (addTask.trim().length > 35) {
+      props.onSetError(
+        "Too many characters",
+        "Please do not use more then 35 characters in Task field!"
+      );
 
+      return;
+    }
+
+    if (addDeadline.length === 0) {
+      props.onSetError("Invalid Date", "Please select a Date!");
+      return;
+    }
     props.onAddTasks(addTask, addDeadline, addTime);
     setAddTask("");
     setAddDeadline("");

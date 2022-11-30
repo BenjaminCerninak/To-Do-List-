@@ -6,13 +6,13 @@ function App() {
   const addTasksHandler = (tData, tDeadline, tTime) => {
     setNewTask((prevTask) => {
       return [
-        ...prevTask,
         {
           task: tData,
           deadline: tDeadline,
           time: tTime,
           id: Math.random().toString(),
         },
+        ...prevTask,
       ];
     });
   };

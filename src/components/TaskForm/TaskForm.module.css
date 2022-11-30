@@ -4,7 +4,7 @@
   width: auto;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 10px;
   border: 2px solid black;
   border-radius: 9px;
   min-width: 300px;

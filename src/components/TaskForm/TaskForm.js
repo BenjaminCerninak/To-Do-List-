@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./TaskForm.module.css";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
+import Date from "./Date";
 const TaskForm = (props) => {
   const [addTask, setAddTask] = useState("");
   const [addDeadline, setAddDeadline] = useState("");
@@ -14,10 +15,10 @@ const TaskForm = (props) => {
 
       return;
     }
-    if (addTask.trim().length > 35) {
+    if (addTask.trim().length > 25) {
       props.onSetError(
         "Too many characters",
-        "Please do not use more then 35 characters in Task field!"
+        "Please do not use more then 25 characters in Task field!"
       );
 
       return;
@@ -36,8 +37,8 @@ const TaskForm = (props) => {
     setAddTask(event.target.value);
   };
 
-  const changeDeadlineHandler = (event) => {
-    setAddDeadline(event.target.value);
+  const onGetDateHandler = (date) => {
+    setAddDeadline(date);
   };
 
   const changeTimeHandler = (event) => {
@@ -52,12 +53,7 @@ const TaskForm = (props) => {
           <input value={addTask} onChange={changeTaskHandler} type="text" />
         </div>
         <div className={classes.task}>
-          <label>Deadline</label>
-          <input
-            value={addDeadline}
-            onChange={changeDeadlineHandler}
-            type="date"
-          />
+          <Date addDeadline={addDeadline} onSetDate={onGetDateHandler} />
         </div>
         <div className={classes.task}>
           <label>Time</label>

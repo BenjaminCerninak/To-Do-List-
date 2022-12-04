@@ -21,6 +21,35 @@
   gap: 8px;
 }
 
+.date {
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.26);
+
+  width: 55px;
+  height: 45px;
+}
+.time {
+  padding: 10px;
+
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.26);
+
+  width: 55px;
+  height: 45px;
+}
+.timeinfo {
+  display: flex;
+  gap: 10px;
+}
+.task {
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 7px;
+}
 ul {
   margin: 0;
   padding: 0;

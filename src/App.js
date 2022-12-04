@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TaskForm from "./components/TaskForm/TaskForm";
 import NewTaskList from "./components/NewTasks/NewTaskList";
 import ErrorModal from "./components/UI/ErrorModal";
+import Header from "./components/UI/Header";
 
 function App() {
   const [newTask, setNewTask] = useState([]);
@@ -34,6 +35,7 @@ function App() {
   };
   return (
     <div>
+      <Header>Todo App</Header>
       {error && (
         <ErrorModal
           errorMessages={errorMessages}

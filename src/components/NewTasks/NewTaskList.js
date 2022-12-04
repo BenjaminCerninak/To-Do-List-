@@ -25,8 +25,8 @@ const NewTaskList = (props) => {
                       <div className={classes.time}> {newTask.time}</div>
                     </div>
                   </li>
-                  <Button className={classes.btn}>Remove</Button>
-                  <Button className={classes.success}>Done</Button>
+                  {/* <Button className={classes.btn}>Remove</Button>
+                  <Button className={classes.success}>Done</Button> */}
                 </Card>
               </div>
             );
